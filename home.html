@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.js">
+	</script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
+	</script>
+    <script>
+$(document).ready(function() {
+$('#example').dataTable( {
+"bServerSide":false,
+"bProcessing":true,
+"sAjaxDataProp": "feed.entry",
+"sAjaxSource": "https://spreadsheets.google.com/feeds/list/1q8YH6nVyappDIahUZY7JwajsGfEpsup2M3RgOf_XVfM/od6/public/values?alt=json",
+"aoColumns": [
+{ "mDataProp": "gsx$medicationname.$t" },
+{ "mDataProp": "gsx$strength.$t" },
+{ "mDataProp": "gsx$pillshape.$t" },
+{ "mDataProp": "gsx$pillcolour.$t" },
+{ "mDataProp": "gsx$indicationscientific.$t" },
+{ "mDataProp": "gsx$indicationcommon.$t" },
+{ "mDataProp": "gsx$price.$t" },
+{ "mDataProp": "gsx$packetsize.$t" },
+]
+} );
+} );
+    </script>
+</head>
+<body class="example">
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>medicationname</th>
+                <th>strength</th>
+                <th>pillshape</th>
+                <th>pillcolour</th>
+                <th>indicationscientific</th>
+                <th>indicationcommon</th>
+                <th>price</th>
+                <th>packetsize</th>
+            </tr>
+        </thead>
+    </table></body>
+</html>
